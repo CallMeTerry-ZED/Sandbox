@@ -10,6 +10,7 @@
 #define APPLICATION_H
 
 #include "Events/Event.h"
+#include "Core/Window/Window.h"
 #include <vector>
 #include <memory>
 
@@ -34,6 +35,7 @@ namespace FPS
 
         bool IsRunning;
         std::vector<std::unique_ptr<Event>> m_EventQueue;
+        std::unique_ptr<Window> m_Window;
     };
 
     // Client Defined

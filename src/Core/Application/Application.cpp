@@ -15,6 +15,11 @@ namespace FPS
 {
     Application::Application()
     {
+        m_Window = std::unique_ptr<Window>(Window::Create());
+        m_Window->SetEventCallback([this](Event& e) {
+            this->OnEvent(e);
+        });
+
         IsRunning = true;
     }
 
@@ -67,8 +72,10 @@ namespace FPS
     {
         while (IsRunning)
         {
-            // Process deferred events first
+            // Process deferred events always first
             ProcessEvents();
+
+            m_Window->OnUpdate();
         }
     }
 }
