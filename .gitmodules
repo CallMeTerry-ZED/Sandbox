@@ -1,0 +1,3 @@
+[submodule "thirdparty/yakuza"]
+    path = thirdparty/yakuza
+    url = https://github.com/CallMeTerry-ZED/Yakuza.git
