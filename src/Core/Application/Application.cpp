@@ -1,0 +1,74 @@
+/*
+ * Copyright (c) 2025 ZED Interactive. All Rights Reserved.
+ * Inspired By The Cherno
+ * Referenced https://github.com/TheCherno/Hazel/blob/f9fbbd2bf3d870a6586c5c4f70a867d78e27b113/Hazel/src/Hazel/Application.cpp
+ *
+ */
+
+#include "Core/Application/Application.h"
+#include "Events/ApplicationEvent.h"
+#include "Events/KeyEvent.h"
+#include "Events/MouseEvent.h"
+#include "Core/Logger/Logger.h"
+
+namespace FPS
+{
+    Application::Application()
+    {
+        IsRunning = true;
+    }
+
+    Application::~Application()
+    {
+        IsRunning = false;
+    }
+
+    void Application::OnEvent(Event& event)
+    {
+        // EventDispatcher for type-safe event handling
+        EventDispatcher dispatcher(event);
+
+        // Handle WindowCloseEvent
+        dispatcher.Dispatch<WindowCloseEvent>([this](WindowCloseEvent& e) {
+            LOG_INFO("Window close event");
+            IsRunning = false;
+            return true;
+        });
+
+        // Handle WindowResizeEvent
+        dispatcher.Dispatch<WindowResizeEvent>([](WindowResizeEvent& e) {
+            LOG_INFO("Window resized: {}x{}", e.GetWidth(), e.GetHeight());
+            return false;
+        });
+
+        // Handle KeyPressedEvent
+        dispatcher.Dispatch<KeyPressedEvent>([](KeyPressedEvent& e) {
+            LOG_DEBUG("Key pressed: {}", e.GetKeyCode());
+            return false;
+        });
+    }
+
+    void Application::QueueEvent(std::unique_ptr<Event> event)
+    {
+        m_EventQueue.push_back(std::move(event));
+    }
+
+    void Application::ProcessEvents()
+    {
+        // Process all queued events
+        for (auto& event : m_EventQueue)
+        {
+            OnEvent(*event);
+        }
+        m_EventQueue.clear();
+    }
+
+    void Application::Run()
+    {
+        while (IsRunning)
+        {
+            // Process deferred events first
+            ProcessEvents();
+        }
+    }
+}

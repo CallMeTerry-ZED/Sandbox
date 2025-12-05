@@ -2,8 +2,8 @@
  * Copyright (c) 2025 ZED Interactive. All Rights Reserved.
  */
 
-#include "Application/Application.h"
-#include "Logger/Logger.h"
+#include "Core/Application/Application.h"
+#include "Core/Logger/Logger.h"
 
 class TestApp : public FPS::Application
 {

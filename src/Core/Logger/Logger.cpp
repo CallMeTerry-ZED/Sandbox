@@ -2,7 +2,7 @@
  * Copyright (c) 2025 ZED Interactive. All Rights Reserved.
  */
 
-#include "Logger/Logger.h"
+#include "Core/Logger/Logger.h"
 
 namespace FPS
 {

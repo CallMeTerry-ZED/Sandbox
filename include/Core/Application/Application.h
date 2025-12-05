@@ -9,6 +9,10 @@
 #ifndef APPLICATION_H
 #define APPLICATION_H
 
+#include "Events/Event.h"
+#include <vector>
+#include <memory>
+
 namespace FPS
 {
     class Application
@@ -19,8 +23,17 @@ namespace FPS
 
         void Run();
 
+        // Event handling
+        void OnEvent(Event& event);
+
+        // Deferred event system
+        void QueueEvent(std::unique_ptr<Event> event);
+
     private:
+        void ProcessEvents();
+
         bool IsRunning;
+        std::vector<std::unique_ptr<Event>> m_EventQueue;
     };
 
     // Client Defined
