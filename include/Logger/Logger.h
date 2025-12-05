@@ -2,22 +2,28 @@
  * Copyright (c) 2025 ZED Interactive. All Rights Reserved.
  */
 
-#ifdef LOGGER_H
+#ifndef LOGGER_H
 #define LOGGER_H
 
+#include <spdlog/logger.h>
+#include "spdlog/sinks/stdout_color_sinks.h"
 #include "spdlog/spdlog.h"
+#include <spdlog/common.h>
 
 namespace FPS
 {
     class Logger
     {
     public:
+        Logger();
+        ~Logger();
+
         static void Init();
         static void Shutdown();
-        static std::shared_ptr<spdlog::Logger> GetLogger() { return s_logger; }
+        static std::shared_ptr<spdlog::logger> GetLogger() { return s_logger; }
 
     private:
-        static std::shared_ptr<spdlog::Logger> s_logger;
+        static std::shared_ptr<spdlog::logger> s_logger;
     };
 }
 

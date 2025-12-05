@@ -22,31 +22,32 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 
-# Project root directory (parent of cmake directory)
-get_filename_component(PROJECT_ROOT ${CMAKE_SOURCE_DIR} DIRECTORY)
+# Project root (parent of the cmake/ directory)
+set(PROJECT_ROOT ${CMAKE_CURRENT_LIST_DIR}/..)
 
-# Add spdlog as subdirectory (with explicit binary directory)
-add_subdirectory(${PROJECT_ROOT}/thridparty/spdlog ${CMAKE_BINARY_DIR}/thridparty/spdlog)
+# Add spdlog from correct folder name
+add_subdirectory(${PROJECT_ROOT}/thirdparty/spdlog ${CMAKE_BINARY_DIR}/thirdparty/spdlog)
 
 # Include directories
+# This assumes your headers are actually in UntitledFPS/include/
 include_directories(
     ${PROJECT_ROOT}/include
 )
 
-# Source files - glob recursively for all .cpp files
+# Source files
 file(GLOB_RECURSE SOURCES
     "${PROJECT_ROOT}/src/*.cpp"
     "${PROJECT_ROOT}/src/*.c"
 )
 
-# Header files - glob recursively for all header files
+# Header files (optional in add_executable)
 file(GLOB_RECURSE HEADERS
     "${PROJECT_ROOT}/include/*.h"
     "${PROJECT_ROOT}/include/*.hpp"
 )
 
 # Create executable
-add_executable(${PROJECT_NAME} ${SOURCES})
+add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 
 # Link libraries
 target_link_libraries(${PROJECT_NAME} PRIVATE spdlog::spdlog)
@@ -67,4 +68,3 @@ if(MSVC)
         /permissive-
     )
 endif()
-
