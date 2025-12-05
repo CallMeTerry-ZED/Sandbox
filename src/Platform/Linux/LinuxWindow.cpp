@@ -1,6 +1,5 @@
 /*
  * Copyright (c) 2025 ZED Interactive. All Rights Reserved.
- * Inspired by TheCherno's Hazel Engine
  */
 
 #include "Platform/Linux/LinuxWindow.h"
@@ -70,14 +69,14 @@ namespace FPS
             data.Height = height;
 
             WindowResizeEvent event(width, height);
-            data.EventCallback(event);
+            data.QueueEventCallback(std::make_unique<WindowResizeEvent>(width, height));
         });
 
         glfwSetWindowCloseCallback(m_Window, [](GLFWwindow* window)
         {
             WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
             WindowCloseEvent event;
-            data.EventCallback(event);
+            data.QueueEventCallback(std::make_unique<WindowCloseEvent>());
         });
 
         glfwSetKeyCallback(m_Window, [](GLFWwindow* window, int key, int scancode,
@@ -90,19 +89,19 @@ namespace FPS
                 case GLFW_PRESS:
                 {
                     KeyPressedEvent event(key, 0);
-                    data.EventCallback(event);
+                    data.QueueEventCallback(std::make_unique<KeyPressedEvent>(key, 0));
                     break;
                 }
                 case GLFW_RELEASE:
                 {
                     KeyReleasedEvent event(key);
-                    data.EventCallback(event);
+                    data.QueueEventCallback(std::make_unique<KeyReleasedEvent>(key));
                     break;
                 }
                 case GLFW_REPEAT:
                 {
                     KeyPressedEvent event(key, 1);
-                    data.EventCallback(event);
+                    data.QueueEventCallback(std::make_unique<KeyPressedEvent>(key, 1));
                     break;
                 }
             }
@@ -118,13 +117,13 @@ namespace FPS
                 case GLFW_PRESS:
                 {
                     MouseButtonPressedEvent event(button);
-                    data.EventCallback(event);
+                    data.QueueEventCallback(std::make_unique<MouseButtonPressedEvent>((button)));
                     break;
                 }
                 case GLFW_RELEASE:
                 {
                     MouseButtonReleasedEvent event(button);
-                    data.EventCallback(event);
+                    data.QueueEventCallback(std::make_unique<MouseButtonReleasedEvent>((button)));
                     break;
                 }
             }
@@ -135,7 +134,7 @@ namespace FPS
             WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
 
             MouseScrolledEvent event((float)xOffset, (float)yOffset);
-            data.EventCallback(event);
+            data.QueueEventCallback(std::make_unique<MouseScrolledEvent>((float)xOffset, (float)yOffset));
         });
 
         glfwSetCursorPosCallback(m_Window, [](GLFWwindow* window, double xPos, double yPos)
@@ -143,7 +142,7 @@ namespace FPS
             WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
 
             MouseMovedEvent event((float)xPos, (float)yPos);
-            data.EventCallback(event);
+            data.QueueEventCallback(std::make_unique<MouseMovedEvent>((float)xPos, (float)yPos));
         });
     }
 

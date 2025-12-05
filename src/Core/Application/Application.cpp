@@ -16,8 +16,8 @@ namespace FPS
     Application::Application()
     {
         m_Window = std::unique_ptr<Window>(Window::Create());
-        m_Window->SetEventCallback([this](Event& e) {
-            this->OnEvent(e);
+        m_Window->SetQueueEventCallback([this](std::unique_ptr<Event> e) {
+            this->QueueEvent(std::move(e));
         });
 
         IsRunning = true;

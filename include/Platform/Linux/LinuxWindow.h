@@ -25,6 +25,10 @@ namespace FPS
         {
             m_Data.EventCallback = callback;
         }
+        inline void SetQueueEventCallback(const QueueEventFn& callback) override
+        {
+            m_Data.QueueEventCallback = callback;
+        }
         void SetVSync(bool enabled) override;
         bool IsVSync() const override;
 
@@ -44,6 +48,7 @@ namespace FPS
             bool VSync;
 
             EventCallbackFn EventCallback;
+            QueueEventFn QueueEventCallback = [](std::unique_ptr<Event>) {};
         };
 
         WindowData m_Data;

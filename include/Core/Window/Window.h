@@ -10,6 +10,7 @@
 #include "Events/Event.h"
 #include <string>
 #include <functional>
+#include <memory>
 
 namespace FPS
 {
@@ -32,6 +33,7 @@ namespace FPS
     {
     public:
         using EventCallbackFn = std::function<void(Event&)>;
+        using QueueEventFn = std::function<void(std::unique_ptr<Event>)>;
 
         virtual ~Window() = default;
 
@@ -42,6 +44,7 @@ namespace FPS
 
         // Window attributes
         virtual void SetEventCallback(const EventCallbackFn& callback) = 0;
+        virtual void SetQueueEventCallback(const QueueEventFn& callback) = 0;
         virtual void SetVSync(bool enabled) = 0;
         virtual bool IsVSync() const = 0;
 
