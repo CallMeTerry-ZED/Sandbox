@@ -21,8 +21,8 @@ namespace FPS
     {
      if (s_Instance)
      {
-         LOG_ERROR("Application already exists!");
-         return;
+        LOG_ERROR("Application already exists!");
+        return;
      }
      s_Instance = this;
 
@@ -42,13 +42,11 @@ namespace FPS
     void Application::PushLayer(Layer* layer)
 	{
 		m_LayerStack.PushLayer(layer);
-		layer->OnAttach();
 	}
 
 	void Application::PushOverlay(Layer* layer)
 	{
 		m_LayerStack.PushOverlay(layer);
-		layer->OnAttach();
 	}
 
     void Application::OnEvent(Event& event)
@@ -59,7 +57,9 @@ namespace FPS
         {
             (*--it)->OnEvent(event);
             if (event.IsHandled())
+            {
                 break;
+            }
         }
 
         // EventDispatcher for type-safe event handling
