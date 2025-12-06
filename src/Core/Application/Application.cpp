@@ -15,8 +15,17 @@
 
 namespace FPS
 {
+    Application* Application::s_Instance = nullptr;
+
     Application::Application()
     {
+     if (s_Instance)
+     {
+         LOG_ERROR("Application already exists!");
+         return;
+     }
+     s_Instance = this;
+
         m_Window = std::unique_ptr<Window>(Window::Create());
         m_Window->SetQueueEventCallback([this](std::unique_ptr<Event> e) {
             this->QueueEvent(std::move(e));
@@ -29,6 +38,18 @@ namespace FPS
     {
         IsRunning = false;
     }
+
+    void Application::PushLayer(Layer* layer)
+	{
+		m_LayerStack.PushLayer(layer);
+		layer->OnAttach();
+	}
+
+	void Application::PushOverlay(Layer* layer)
+	{
+		m_LayerStack.PushOverlay(layer);
+		layer->OnAttach();
+	}
 
     void Application::OnEvent(Event& event)
     {
@@ -86,9 +107,14 @@ namespace FPS
             // Process deferred events always first
             ProcessEvents();
 
+            glClearColor(0.1f, 0.1f, 0.1f, 1.0f);  // Dark gray background
+            glClear(GL_COLOR_BUFFER_BIT);
+
             // Update all layers
             for (Layer* layer : m_LayerStack)
+            {
                 layer->OnUpdate();
+            }
 
             m_Window->OnUpdate();
         }

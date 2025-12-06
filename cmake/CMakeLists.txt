@@ -111,13 +111,17 @@ target_link_libraries(${PROJECT_NAME}
         imgui_node_editor
 )
 
-# On Linux, you must also link against system OpenGL + pthread + dl
+# On Linux, you must also link against system OpenGL + pthread + dl + X11
 if(UNIX AND NOT APPLE)
     target_link_libraries(${PROJECT_NAME}
         PRIVATE
             GL
             pthread
             dl
+            X11
+            Xrandr
+            Xi
+            Xcursor
     )
 endif()
 

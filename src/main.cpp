@@ -2,8 +2,8 @@
  * Copyright (c) 2025 ZED Interactive. All Rights Reserved.
  */
 
-
 #include "Core/Engine.h"
+#include "Core/ImGui/ImGuiLayer.h"
 
 class ExampleLayer : public FPS::Layer
 {
@@ -21,7 +21,6 @@ public:
     {
         //LOG_TRACE("{}", event.ToString());
     }
-
 };
 
 class TestApp : public FPS::Application
@@ -30,6 +29,7 @@ public:
     TestApp()
     {
         PushLayer(new ExampleLayer());
+        PushOverlay(new FPS::ImGuiLayer());
     }
 
     ~TestApp()

@@ -7,6 +7,7 @@ set(IMGUI_SOURCES
     imgui_draw.cpp
     imgui_tables.cpp
     imgui_widgets.cpp
+    imgui_demo.cpp
 )
 
 # Backends (GLFW + OpenGL3)

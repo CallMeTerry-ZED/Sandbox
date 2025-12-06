@@ -5,7 +5,6 @@
  *
  */
 
-
 #ifndef APPLICATION_H
 #define APPLICATION_H
 
@@ -32,10 +31,11 @@ namespace FPS
         void QueueEvent(std::unique_ptr<Event> event);
 
         // Layer management
-        void PushLayer(Layer* layer) { m_LayerStack.PushLayer(layer); }
-        void PushOverlay(Layer* overlay) { m_LayerStack.PushOverlay(overlay); }
-        void PopLayer(Layer* layer) { m_LayerStack.PopLayer(layer); }
-        void PopOverlay(Layer* overlay) { m_LayerStack.PopOverlay(overlay); }
+        void PushLayer(Layer* layer);
+        void PushOverlay(Layer* overlay);
+
+        inline Window& GetWindow() { return *m_Window; }
+		inline static Application& Get() { return *s_Instance; }
 
     private:
         void ProcessEvents();
@@ -44,6 +44,7 @@ namespace FPS
         std::vector<std::unique_ptr<Event>> m_EventQueue;
         std::unique_ptr<Window> m_Window;
         LayerStack m_LayerStack;
+        static Application* s_Instance;
     };
 
     // Client Defined
