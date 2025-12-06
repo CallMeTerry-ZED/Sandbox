@@ -57,6 +57,15 @@ add_subdirectory(${PROJECT_ROOT}/thirdparty/glfw ${CMAKE_BINARY_DIR}/thirdparty/
 # glad
 add_subdirectory(${PROJECT_ROOT}/thirdparty/glad ${CMAKE_BINARY_DIR}/thirdparty/glad)
 
+# imgui
+add_subdirectory(${PROJECT_ROOT}/thirdparty/imgui-docking ${CMAKE_BINARY_DIR}/thirdparty/imgui)
+
+# imguizmo
+add_subdirectory(${PROJECT_ROOT}/thirdparty/imguizmo ${CMAKE_BINARY_DIR}/thirdparty/imguizmo)
+
+# imgui-node-editor
+add_subdirectory(${PROJECT_ROOT}/thirdparty/imgui-node-editor ${CMAKE_BINARY_DIR}/thirdparty/imgui-node-editor)
+
 # ===========================
 # Include directories
 # ===========================
@@ -65,6 +74,10 @@ include_directories(
     ${PROJECT_ROOT}/thirdparty/spdlog/include
     ${PROJECT_ROOT}/thirdparty/glfw/include
     ${PROJECT_ROOT}/thirdparty/glad
+    ${PROJECT_ROOT}/thirdparty/imgui-docking
+    ${PROJECT_ROOT}/thirdparty/imgui-docking/backends
+    ${PROJECT_ROOT}/thirdparty/imguizmo
+    ${PROJECT_ROOT}/thirdparty/imgui-node-editor
 )
 
 # ===========================
@@ -93,6 +106,9 @@ target_link_libraries(${PROJECT_NAME}
         spdlog::spdlog
         glfw
         glad
+        imgui
+        imguizmo
+        imgui_node_editor
 )
 
 # On Linux, you must also link against system OpenGL + pthread + dl
