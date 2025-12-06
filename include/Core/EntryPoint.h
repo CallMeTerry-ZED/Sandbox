@@ -7,7 +7,7 @@
 
 extern FPS::Application* FPS::CreateApplication();
 
-int main(int argc, char** argv)
+int main()
 {
     FPS::Logger logger;
 

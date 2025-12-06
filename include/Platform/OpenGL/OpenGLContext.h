@@ -5,7 +5,7 @@
  #ifndef OPENGL_CONTEXT_H
  #define OPENGL_CONTEXT_H
 
-#include "Renderer/GraphicsContext.h"
+#include "Renderer/Context/GraphicsContext.h"
 
 // Foward Declare GLFW window for now ig
 struct GLFWwindow;

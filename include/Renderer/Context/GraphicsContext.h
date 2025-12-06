@@ -2,7 +2,7 @@
  * Copyright (c) 2025 ZED Interactive. All Rights Reserved.
  */
 
- #ifndef GRAPHICS_CONTEXT_H
+#ifndef GRAPHICS_CONTEXT_H
 #define GRAPHICS_CONTEXT_H
 
 namespace FPS

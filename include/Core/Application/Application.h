@@ -13,6 +13,7 @@
 #include "Core/Layer/LayerStack.h"
 #include "Core/ImGui/ImGuiLayer.h" 
 #include "Renderer/Shader/Shader.h"
+#include "Renderer/Buffer/Buffer.h"
 
 #include <vector>
 #include <memory>
@@ -53,8 +54,10 @@ namespace FPS
         LayerStack m_LayerStack;
         ImGuiLayer* m_ImGuiLayer;
 
-        unsigned int m_VertexArray, m_VertexBuffer, m_IndexBuffer;
+        unsigned int m_VertexArray;
         std::unique_ptr<Shader> m_Shader;
+        std::unique_ptr<VertexBuffer> m_VertexBuffer;
+		std::unique_ptr<IndexBuffer> m_IndexBuffer;
     };
 
     // Client Defined
