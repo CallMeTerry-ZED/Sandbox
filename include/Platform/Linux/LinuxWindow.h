@@ -7,8 +7,8 @@
 #define LINUX_WINDOW_H
 
 #include "Core/Window/Window.h"
+#include "Renderer/GraphicsContext.h" 
 
-#include <glad.h>
 #include <GLFW/glfw3.h>
 
 namespace FPS
@@ -44,6 +44,7 @@ namespace FPS
 
     private:
         GLFWwindow* m_Window;
+        GraphicsContext* m_Context;
 
         struct WindowData
         {

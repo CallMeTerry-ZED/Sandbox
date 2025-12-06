@@ -3,8 +3,6 @@
  */
 
 #include "Core/Engine.h"
-#include "imgui.h"
-
 
 class ExampleLayer : public FPS::Layer
 {

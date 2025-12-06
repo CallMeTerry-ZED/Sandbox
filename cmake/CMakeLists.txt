@@ -137,6 +137,7 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
         -Wall
         -Wextra
         -Wpedantic
+        -Wunused-parameter
     )
 endif()
 
@@ -144,6 +145,16 @@ if(MSVC)
     target_compile_options(${PROJECT_NAME} PRIVATE
         /W4
         /permissive-
+        -Wunused-parameter
+    )
+endif()
+
+# ===========================
+# Preprocessor definitions
+# ===========================
+if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+    target_compile_definitions(${PROJECT_NAME} PRIVATE
+        FPS_DEBUG
     )
 endif()
 
