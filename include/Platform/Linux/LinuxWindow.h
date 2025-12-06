@@ -2,9 +2,13 @@
  * Copyright (c) 2025 ZED Interactive. All Rights Reserved.
  */
 
-#pragma once
+
+#ifndef LINUX_WINDOW_H
+#define LINUX_WINDOW_H
 
 #include "Core/Window/Window.h"
+
+#include <glad.h>
 #include <GLFW/glfw3.h>
 
 namespace FPS
@@ -55,3 +59,5 @@ namespace FPS
         static bool s_GLFWInitialized;
     };
 }
+
+#endif

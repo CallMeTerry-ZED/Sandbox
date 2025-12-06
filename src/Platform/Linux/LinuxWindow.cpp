@@ -8,8 +8,6 @@
 #include "Events/MouseEvent.h"
 #include "Core/Logger/Logger.h"
 
-#include <GLFW/glfw3.h>
-
 namespace FPS
 {
     // Define static member variable
@@ -45,6 +43,7 @@ namespace FPS
 
         if (!s_GLFWInitialized)
         {
+            glfwInitHint(GLFW_WAYLAND_LIBDECOR, GLFW_FALSE);
             int success = glfwInit();
             if (!success)
             {
@@ -55,9 +54,13 @@ namespace FPS
             s_GLFWInitialized = true;
         }
 
-        m_Window = glfwCreateWindow((int)props.Width, (int)props.Height,
-                                    m_Data.Title.c_str(), nullptr, nullptr);
+        m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
         glfwMakeContextCurrent(m_Window);
+        if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+        {
+            LOG_CRITICAL("Failed to initialize GLAD!");
+            return;
+        }
         glfwSetWindowUserPointer(m_Window, &m_Data);
         SetVSync(true);
 

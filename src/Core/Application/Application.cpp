@@ -11,6 +11,8 @@
 #include "Events/MouseEvent.h"
 #include "Core/Logger/Logger.h"
 
+#include <glad.h>
+
 namespace FPS
 {
     Application::Application()

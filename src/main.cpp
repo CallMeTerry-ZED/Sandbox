@@ -3,11 +3,7 @@
  */
 
 
-#include "Core/Application/Application.h"
-#include "Core/Layer/Layer.h"
-#include "Core/Layer/LayerStack.h"
-#include "Core/Logger/Logger.h"
-#include "Core/EntryPoint.h"
+#include "Core/Engine.h"
 
 class ExampleLayer : public FPS::Layer
 {
@@ -23,7 +19,7 @@ public:
 
     void OnEvent(FPS::Event& event) override
     {
-        LOG_TRACE("{}", event.ToString());
+        //LOG_TRACE("{}", event.ToString());
     }
 
 };

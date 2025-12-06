@@ -8,6 +8,7 @@ CMakeFiles/
 cmake_install.cmake
 *.cmake
 !cmake/*.cmake
+.cache
 
 # Compiled binaries
 *.o

@@ -53,24 +53,31 @@ add_subdirectory(${PROJECT_ROOT}/thirdparty/spdlog ${CMAKE_BINARY_DIR}/thirdpart
 # glfw
 add_subdirectory(${PROJECT_ROOT}/thirdparty/glfw ${CMAKE_BINARY_DIR}/thirdparty/glfw)
 
+
+# glad
+add_subdirectory(${PROJECT_ROOT}/thirdparty/glad ${CMAKE_BINARY_DIR}/thirdparty/glad)
+
 # ===========================
 # Include directories
 # ===========================
 include_directories(
     ${PROJECT_ROOT}/include
+    ${PROJECT_ROOT}/thirdparty/spdlog/include
+    ${PROJECT_ROOT}/thirdparty/glfw/include
+    ${PROJECT_ROOT}/thirdparty/glad
 )
 
 # ===========================
 # Source files
 # ===========================
 file(GLOB_RECURSE SOURCES
-    "${PROJECT_ROOT}/src/*.cpp"
-    "${PROJECT_ROOT}/src/*.c"
+    "${PROJECT_ROOT}/src/**.cpp"
+    "${PROJECT_ROOT}/src/**.c"
 )
 
 file(GLOB_RECURSE HEADERS
-    "${PROJECT_ROOT}/include/*.h"
-    "${PROJECT_ROOT}/include/*.hpp"
+    "${PROJECT_ROOT}/include/**.h"
+    "${PROJECT_ROOT}/include/**.hpp"
 )
 
 # ===========================
@@ -85,6 +92,7 @@ target_link_libraries(${PROJECT_NAME}
     PRIVATE
         spdlog::spdlog
         glfw
+        glad
 )
 
 # On Linux, you must also link against system OpenGL + pthread + dl
@@ -119,8 +127,6 @@ message(STATUS "")
 message(STATUS "========== FPS Engine Build Summary ==========")
 message(STATUS "C++ Standard:        ${CMAKE_CXX_STANDARD}")
 message(STATUS "Build Type:          ${CMAKE_BUILD_TYPE}")
-message(STATUS "GLFW Static:         ${GLFW_BUILD_STATIC}")
-message(STATUS "Spdlog Static:       ${SPDLOG_BUILD_STATIC}")
 message(STATUS "Install Prefix:      ${CMAKE_INSTALL_PREFIX}")
 message(STATUS "================================================")
 message(STATUS "")
