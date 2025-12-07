@@ -9,6 +9,7 @@ class ExampleLayer : public FPS::Layer
 public:
     ExampleLayer() : Layer("Example")
     {
+        // BOY IF YOU DONT STOP
     }
 
     void OnUpdate() override

@@ -4,6 +4,8 @@
 
 #include "Platform/OpenGL/OpenGLVertexArray.h"
 #include "Core/Core.h"
+#include "Events/Event.h"
+#include "Renderer/Buffer/Buffer.h"
 
 #include <glad.h>
 
@@ -13,6 +15,7 @@ namespace FPS
 	{
 		switch (type)
 		{
+            case FPS::ShaderDataType::None:     return None;
 			case FPS::ShaderDataType::Float:    return GL_FLOAT;
 			case FPS::ShaderDataType::Float2:   return GL_FLOAT;
 			case FPS::ShaderDataType::Float3:   return GL_FLOAT;
