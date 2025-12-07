@@ -5,6 +5,7 @@
 #ifndef SHADER_H
 #define SHADER_H
 
+#include <glm/glm.hpp>
 #include <cstdint>
 #include <string>
 
@@ -18,6 +19,8 @@ namespace FPS
 
 		void Bind() const;
 		void Unbind() const;
+
+		void UploadUniformMat4(const std::string& name, const glm::mat4& matrix);
 	private:
 		uint32_t m_RendererID;
 	};

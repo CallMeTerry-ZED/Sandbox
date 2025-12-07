@@ -15,6 +15,7 @@
 #include "Renderer/Shader/Shader.h"
 #include "Renderer/Buffer/Buffer.h"
 #include "Renderer/Buffer/VertexArray.h"
+#include "Renderer/Camera/OrthographicCamera.h"
 
 #include <vector>
 #include <memory>
@@ -60,6 +61,8 @@ namespace FPS
 
         std::shared_ptr<Shader> m_BlueShader;
 		std::shared_ptr<VertexArray> m_SquareVA;
+
+        OrthographicCamera m_Camera;
     };
 
     // Client Defined
