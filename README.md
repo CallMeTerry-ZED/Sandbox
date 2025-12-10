@@ -1,6 +1,6 @@
-# UntitledFPS
+# Sandbox
 
-A FPS game/engine written in modern C++ and OpenGL.
+A prototype third-person open-world game and engine built in modern C++ and OpenGL.
 
 Feel free to join us on [Discord](https://discord.gg/NmQwqfsCD7).
 
@@ -9,12 +9,14 @@ Heavily Inspired By the Chernos Hazel Engine project, [Hazel](https://github.com
 ## "From Scratch"
 
 Planned features such as:
+- Third-person player controller
 - Lua scripting
 - Bullet3 physics
 - Custom networking
-- Custom animations
-- 2.5D raycasting with planned full 3D rendering
-- Cross platfrom support
+- Custom animation system
+- Full 3D rendering with open-world support
+- Cross-platform support
+- Editor tools for world building
 - And much more
 
 ## Building
@@ -53,6 +55,11 @@ make run BUILD_TYPE=Debug      # Build and run Debug
 ```
 
 The build output will be in the `build/` directory, with the executable at `build/bin/FPS`.
+
+## License
+
+This project is released under the MIT License.
+See the [LICENSE](https://github.com/CallMeTerry-ZED/Sandbox/blob/main/LICENSE) file for full details.
 
 ## COPYRIGHT
 
