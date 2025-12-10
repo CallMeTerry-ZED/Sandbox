@@ -22,6 +22,7 @@
 
 #include "Renderer/Buffer/Buffer.h"
 #include "Renderer/Shader/Shader.h"
+#include "Platform/OpenGL/OpenGLShader.h"
 #include "Renderer/Buffer/VertexArray.h"
 
 #include "Renderer/Camera/OrthographicCamera.h"
@@ -34,5 +35,6 @@
 // Thirdparty Includes
 #include <imgui.h>
 #include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 #endif
