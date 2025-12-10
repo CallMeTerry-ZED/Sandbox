@@ -9,7 +9,7 @@
 #include "Camera/OrthographicCamera.h"
 #include "Renderer/Shader/Shader.h"
 
-namespace FPS
+namespace Sandbox
 {
 	class Renderer
 	{

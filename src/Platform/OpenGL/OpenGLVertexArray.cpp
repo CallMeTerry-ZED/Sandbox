@@ -9,27 +9,27 @@
 
 #include <glad.h>
 
-namespace FPS 
+namespace Sandbox 
 {
 	static GLenum ShaderDataTypeToOpenGLBaseType(ShaderDataType type)
 	{
 		switch (type)
 		{
-            case FPS::ShaderDataType::None:     return None;
-			case FPS::ShaderDataType::Float:    return GL_FLOAT;
-			case FPS::ShaderDataType::Float2:   return GL_FLOAT;
-			case FPS::ShaderDataType::Float3:   return GL_FLOAT;
-			case FPS::ShaderDataType::Float4:   return GL_FLOAT;
-			case FPS::ShaderDataType::Mat3:     return GL_FLOAT;
-			case FPS::ShaderDataType::Mat4:     return GL_FLOAT;
-			case FPS::ShaderDataType::Int:      return GL_INT;
-			case FPS::ShaderDataType::Int2:     return GL_INT;
-			case FPS::ShaderDataType::Int3:     return GL_INT;
-			case FPS::ShaderDataType::Int4:     return GL_INT;
-			case FPS::ShaderDataType::Bool:     return GL_BOOL;
+            case Sandbox::ShaderDataType::None:     return None;
+			case Sandbox::ShaderDataType::Float:    return GL_FLOAT;
+			case Sandbox::ShaderDataType::Float2:   return GL_FLOAT;
+			case Sandbox::ShaderDataType::Float3:   return GL_FLOAT;
+			case Sandbox::ShaderDataType::Float4:   return GL_FLOAT;
+			case Sandbox::ShaderDataType::Mat3:     return GL_FLOAT;
+			case Sandbox::ShaderDataType::Mat4:     return GL_FLOAT;
+			case Sandbox::ShaderDataType::Int:      return GL_INT;
+			case Sandbox::ShaderDataType::Int2:     return GL_INT;
+			case Sandbox::ShaderDataType::Int3:     return GL_INT;
+			case Sandbox::ShaderDataType::Int4:     return GL_INT;
+			case Sandbox::ShaderDataType::Bool:     return GL_BOOL;
 		}
 
-		FPS_CORE_ASSERT(false, "Unknown ShaderDataType!");
+		SANDBOX_CORE_ASSERT(false, "Unknown ShaderDataType!");
 		return 0;
 	}
 
@@ -55,7 +55,7 @@ namespace FPS
 
 	void OpenGLVertexArray::AddVertexBuffer(const std::shared_ptr<VertexBuffer>& vertexBuffer)
 	{
-		FPS_CORE_ASSERT(vertexBuffer->GetLayout().GetElements().size(), "Vertex Buffer has no layout!");
+		SANDBOX_CORE_ASSERT(vertexBuffer->GetLayout().GetElements().size(), "Vertex Buffer has no layout!");
 
 		glBindVertexArray(m_RendererID);
 		vertexBuffer->Bind();

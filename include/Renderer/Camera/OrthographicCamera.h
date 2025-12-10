@@ -7,7 +7,7 @@
 
 #include <glm/glm.hpp>
 
-namespace FPS
+namespace Sandbox
 {
 	class OrthographicCamera
 	{

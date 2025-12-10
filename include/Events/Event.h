@@ -12,7 +12,7 @@
 #include <sstream>
 #include <iostream>
 
-namespace FPS
+namespace Sandbox
 {
     // Helper macro for bit shifting
     #define BIT(x) (1 << x)

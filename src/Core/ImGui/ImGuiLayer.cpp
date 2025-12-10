@@ -13,7 +13,7 @@
 #include <backends/imgui_impl_opengl3.h>
 #include <GLFW/glfw3.h>
 
-namespace FPS
+namespace Sandbox
 {
     ImGuiLayer::ImGuiLayer() : Layer("ImGuiLayer")
     {

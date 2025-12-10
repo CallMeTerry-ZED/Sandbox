@@ -10,7 +10,7 @@
 #include "Events/Event.h"
 #include <sstream>
 
-namespace FPS
+namespace Sandbox
 {
     // Window Close Event
     class WindowCloseEvent : public Event

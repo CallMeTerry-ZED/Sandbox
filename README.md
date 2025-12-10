@@ -54,7 +54,7 @@ make build BUILD_TYPE=Debug    # Build Debug using regular target
 make run BUILD_TYPE=Debug      # Build and run Debug
 ```
 
-The build output will be in the `build/` directory, with the executable at `build/bin/FPS`.
+The build output will be in the `build/` directory, with the executable at `build/bin/Sandbox`.
 
 ## License
 

@@ -10,7 +10,7 @@
 #include "Events/Event.h"
 #include <sstream>
 
-namespace FPS
+namespace Sandbox
 {
     // Base Key Event
     class KeyEvent : public Event

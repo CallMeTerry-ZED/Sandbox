@@ -9,7 +9,7 @@
 #include "Events/Event.h"
 #include <cstdint>
 
-namespace FPS
+namespace Sandbox
 {
     enum class ShaderDataType
 	{
@@ -45,7 +45,7 @@ namespace FPS
 			case ShaderDataType::Bool:     	return 1;
 		}
 
-		FPS_CORE_ASSERT(false, "Unknown ShaderDataType!");
+		SANDBOX_CORE_ASSERT(false, "Unknown ShaderDataType!");
 		return 0;
 	}
 
@@ -88,7 +88,7 @@ namespace FPS
 				case ShaderDataType::Bool:    	return 1;
 			}
 
-			FPS_CORE_ASSERT(false, "Unknown ShaderDataType!");
+			SANDBOX_CORE_ASSERT(false, "Unknown ShaderDataType!");
 			return 0;
 		}
 	};

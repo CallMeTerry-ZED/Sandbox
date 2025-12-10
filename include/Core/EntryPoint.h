@@ -5,13 +5,13 @@
 #ifndef ENTRY_POINT_H
 #define ENTRY_POINT_H
 
-extern FPS::Application* FPS::CreateApplication();
+extern Sandbox::Application* Sandbox::CreateApplication();
 
 int main()
 {
-    FPS::Logger logger;
+    Sandbox::Logger logger;
 
-    auto app = FPS::CreateApplication();
+    auto app = Sandbox::CreateApplication();
     app->Run();
     delete app;
 

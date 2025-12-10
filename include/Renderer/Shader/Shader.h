@@ -9,7 +9,7 @@
 #include <cstdint>
 #include <string>
 
-namespace FPS
+namespace Sandbox
 {
 	class Shader
 	{

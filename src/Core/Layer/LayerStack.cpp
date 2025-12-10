@@ -6,7 +6,7 @@
 
 #include "Core/Layer/LayerStack.h"
 
-namespace FPS
+namespace Sandbox
 {
     LayerStack::LayerStack()
     {

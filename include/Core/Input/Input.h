@@ -7,7 +7,7 @@
 
 #include <utility>
 
-namespace FPS
+namespace Sandbox
 {
     class Input
     {

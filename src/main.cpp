@@ -4,7 +4,7 @@
 
 #include "Core/Engine.h"
 
-class ExampleLayer : public FPS::Layer
+class ExampleLayer : public Sandbox::Layer
 {
 public:
     ExampleLayer() : Layer("Example")
@@ -16,7 +16,7 @@ public:
     {
         //LOG_TRACE("ExampleLayer::Update");
 
-        if (FPS::Input::IsKeyPressed(FPS_KEY_TAB))
+        if (Sandbox::Input::IsKeyPressed(SANDBOX_KEY_TAB))
 		LOG_TRACE("Tab key is pressed (poll)!");
     }
 
@@ -26,19 +26,19 @@ public:
 		ImGui::Text("Hello World");
 		ImGui::End();
 
-        ImGui::Begin("FPS ENGINE");
-        ImGui::Text("WELCOME TO FPS ENGINE!");
+        ImGui::Begin("Sandbox ENGINE");
+        ImGui::Text("WELCOME TO Sandbox ENGINE!");
         ImGui::End();
 	}
 
-    void OnEvent(FPS::Event& event) override
+    void OnEvent(Sandbox::Event& event) override
     {
         //LOG_TRACE("{}", event.ToString());
 
-        if (event.GetEventType() == FPS::EventType::KeyPressed)
+        if (event.GetEventType() == Sandbox::EventType::KeyPressed)
 		{
-			FPS::KeyPressedEvent& e = (FPS::KeyPressedEvent&)event;
-			if (e.GetKeyCode() == FPS_KEY_TAB)
+			Sandbox::KeyPressedEvent& e = (Sandbox::KeyPressedEvent&)event;
+			if (e.GetKeyCode() == SANDBOX_KEY_TAB)
             {
                 LOG_TRACE("Tab key is pressed (event)!");
             }
@@ -47,7 +47,7 @@ public:
     }
 };
 
-class TestApp : public FPS::Application
+class TestApp : public Sandbox::Application
 {
 public:
     TestApp()
@@ -61,7 +61,7 @@ public:
     }
 };
 
-FPS::Application* FPS::CreateApplication()
+Sandbox::Application* Sandbox::CreateApplication()
 {
     return new TestApp();
 }

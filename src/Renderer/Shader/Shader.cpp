@@ -10,7 +10,7 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <vector>
 
-namespace FPS
+namespace Sandbox
 {
 	Shader::Shader(const std::string& vertexSrc, const std::string& fragmentSrc)
 	{
@@ -40,7 +40,7 @@ namespace FPS
 			glDeleteShader(vertexShader);
 
 			LOG_ERROR("{0}", infoLog.data());
-			FPS_CORE_ASSERT(false, "Vertex shader compilation failure!");
+			SANDBOX_CORE_ASSERT(false, "Vertex shader compilation failure!");
 			return;
 		}
 
@@ -71,7 +71,7 @@ namespace FPS
 			glDeleteShader(vertexShader);
 
 			LOG_ERROR("{0}", infoLog.data());
-			FPS_CORE_ASSERT(false, "Fragment shader compilation failure!");
+			SANDBOX_CORE_ASSERT(false, "Fragment shader compilation failure!");
 			return;
 		}
 
@@ -107,7 +107,7 @@ namespace FPS
 			glDeleteShader(fragmentShader);
 
 			LOG_ERROR("{0}", infoLog.data());
-			FPS_CORE_ASSERT(false, "Shader link failure!");
+			SANDBOX_CORE_ASSERT(false, "Shader link failure!");
 			return;
 		}
 

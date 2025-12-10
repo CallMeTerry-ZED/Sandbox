@@ -10,7 +10,7 @@
 #include "Events/Event.h"
 #include <string>
 
-namespace FPS
+namespace Sandbox
 {
     class Layer
     {

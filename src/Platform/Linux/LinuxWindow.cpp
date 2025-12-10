@@ -9,7 +9,7 @@
 #include "Events/MouseEvent.h"
 #include "Core/Logger/Logger.h"
 
-namespace FPS
+namespace Sandbox
 {
     // Define static member variable
     bool LinuxWindow::s_GLFWInitialized = false;

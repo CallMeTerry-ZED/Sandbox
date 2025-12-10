@@ -5,7 +5,7 @@
 #ifndef GRAPHICS_CONTEXT_H
 #define GRAPHICS_CONTEXT_H
 
-namespace FPS
+namespace Sandbox
 {
 	class GraphicsContext
 	{

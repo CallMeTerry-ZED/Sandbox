@@ -4,7 +4,7 @@
 
 #include "Renderer/RendererAPI.h"
 
-namespace FPS
+namespace Sandbox
 {
 	RendererAPI::API RendererAPI::s_API = RendererAPI::API::OpenGL;
 }

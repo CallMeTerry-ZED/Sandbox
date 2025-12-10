@@ -4,7 +4,7 @@
 
 #include "Core/Logger/Logger.h"
 
-namespace FPS
+namespace Sandbox
 {
     std::shared_ptr<spdlog::logger> Logger::s_logger = nullptr;
 
@@ -23,7 +23,7 @@ namespace FPS
     {
         if (!s_logger)
         {
-            s_logger = spdlog::stdout_color_mt("FPS");
+            s_logger = spdlog::stdout_color_mt("Sandbox");
             s_logger->set_level(spdlog::level::trace);
             s_logger->set_pattern("[%H:%M:%S] [%^%l%$] %v");
         }
@@ -34,7 +34,7 @@ namespace FPS
         if (s_logger)
         {
             s_logger->flush();
-            spdlog::drop("FPS"); // Remove logger from spdlog registry
+            spdlog::drop("Sandbox"); // Remove logger from spdlog registry
             s_logger = nullptr;
         }
     }

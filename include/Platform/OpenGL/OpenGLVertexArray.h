@@ -7,7 +7,7 @@
 
 #include "Renderer/Buffer/VertexArray.h"
 
-namespace FPS
+namespace Sandbox
 {
 	class OpenGLVertexArray : public VertexArray
 	{

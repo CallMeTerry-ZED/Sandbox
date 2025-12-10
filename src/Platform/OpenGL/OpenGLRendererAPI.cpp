@@ -6,7 +6,7 @@
 
 #include <glad.h>
 
-namespace FPS
+namespace Sandbox
 {
 
 	void OpenGLRendererAPI::SetClearColor(const glm::vec4& color)

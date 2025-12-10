@@ -7,7 +7,7 @@
 
 #include "Renderer/Buffer/Buffer.h"
 
-namespace FPS
+namespace Sandbox
 {
 	class OpenGLVertexBuffer : public VertexBuffer
 	{

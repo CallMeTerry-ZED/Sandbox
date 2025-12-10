@@ -4,7 +4,7 @@
 
  #include "Renderer/Renderer.h"
 
-namespace FPS
+namespace Sandbox
 {
 	Renderer::SceneData* Renderer::m_SceneData = new Renderer::SceneData;
 

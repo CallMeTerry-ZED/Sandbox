@@ -7,7 +7,7 @@
 
 #include "Core/Input/Input.h"
 
-namespace FPS
+namespace Sandbox
 {
     class LinuxInput : public Input
     {

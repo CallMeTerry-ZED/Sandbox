@@ -6,7 +6,7 @@
 #include "Core/Application/Application.h"
 #include <GLFW/glfw3.h>
 
-namespace FPS
+namespace Sandbox
 {
     Input* Input::s_Instance = new LinuxInput();
 

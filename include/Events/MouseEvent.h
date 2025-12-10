@@ -10,7 +10,7 @@
 #include "Events/Event.h"
 #include <sstream>
 
-namespace FPS
+namespace Sandbox
 {
     // Mouse Moved Event
     class MouseMovedEvent : public Event

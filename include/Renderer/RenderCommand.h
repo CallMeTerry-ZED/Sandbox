@@ -7,7 +7,7 @@
 
 #include "RendererAPI.h"
 
-namespace FPS
+namespace Sandbox
 {
 
 	class RenderCommand

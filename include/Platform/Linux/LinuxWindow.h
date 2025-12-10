@@ -11,7 +11,7 @@
 
 #include <GLFW/glfw3.h>
 
-namespace FPS
+namespace Sandbox
 {
     class LinuxWindow : public Window
     {

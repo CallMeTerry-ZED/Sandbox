@@ -10,7 +10,7 @@
 // Foward Declare GLFW window for now ig
 struct GLFWwindow;
 
-namespace FPS
+namespace Sandbox
 {
 	class OpenGLContext : public GraphicsContext
 	{

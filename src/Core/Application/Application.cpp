@@ -14,7 +14,7 @@
 
 #include "Renderer/Renderer.h"
 
-namespace FPS
+namespace Sandbox
 {
     Application* Application::s_Instance = nullptr;
 

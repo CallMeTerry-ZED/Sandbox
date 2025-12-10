@@ -9,18 +9,18 @@
 #include "glad.h"
 #include <GLFW/glfw3.h>
 
-namespace FPS
+namespace Sandbox
 {
 	OpenGLContext::OpenGLContext(GLFWwindow* windowHandle) : m_WindowHandle(windowHandle)
 	{
-		FPS_CORE_ASSERT(windowHandle, "Window handle is null!");
+		SANDBOX_CORE_ASSERT(windowHandle, "Window handle is null!");
 	}
 
 	void OpenGLContext::Init()
 	{
 		glfwMakeContextCurrent(m_WindowHandle);
 		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-		FPS_CORE_ASSERT(status, "Failed to initialize Glad!"); 
+		SANDBOX_CORE_ASSERT(status, "Failed to initialize Glad!"); 
 
 		LOG_INFO("OpenGL Info:");
 		LOG_INFO("Vendor: {}", 	GlString(glGetString(GL_VENDOR)));

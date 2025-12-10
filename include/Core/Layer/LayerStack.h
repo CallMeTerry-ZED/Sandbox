@@ -11,7 +11,7 @@
 #include <vector>
 #include <algorithm>
 
-namespace FPS
+namespace Sandbox
 {
     class LayerStack
     {

@@ -12,7 +12,7 @@
 #include "spdlog/fmt/ostr.h"
 #include "spdlog/fmt/bundled/core.h" 
 
-namespace FPS
+namespace Sandbox
 {
     class Logger
     {
@@ -50,11 +50,11 @@ namespace fmt
     };
 }
 
-#define LOG_TRACE(...)    FPS::Logger::GetLogger()->trace(__VA_ARGS__)
-#define LOG_DEBUG(...)    FPS::Logger::GetLogger()->debug(__VA_ARGS__)
-#define LOG_INFO(...)     FPS::Logger::GetLogger()->info(__VA_ARGS__)
-#define LOG_WARN(...)     FPS::Logger::GetLogger()->warn(__VA_ARGS__)
-#define LOG_ERROR(...)    FPS::Logger::GetLogger()->error(__VA_ARGS__)
-#define LOG_CRITICAL(...) FPS::Logger::GetLogger()->critical(__VA_ARGS__)
+#define LOG_TRACE(...)    Sandbox::Logger::GetLogger()->trace(__VA_ARGS__)
+#define LOG_DEBUG(...)    Sandbox::Logger::GetLogger()->debug(__VA_ARGS__)
+#define LOG_INFO(...)     Sandbox::Logger::GetLogger()->info(__VA_ARGS__)
+#define LOG_WARN(...)     Sandbox::Logger::GetLogger()->warn(__VA_ARGS__)
+#define LOG_ERROR(...)    Sandbox::Logger::GetLogger()->error(__VA_ARGS__)
+#define LOG_CRITICAL(...) Sandbox::Logger::GetLogger()->critical(__VA_ARGS__)
 
 #endif

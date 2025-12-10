@@ -8,7 +8,7 @@
 #include <memory>
 #include "Renderer/Buffer/Buffer.h"
 
-namespace FPS
+namespace Sandbox
 {
 	class VertexArray
 	{

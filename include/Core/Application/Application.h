@@ -20,7 +20,7 @@
 #include <vector>
 #include <memory>
 
-namespace FPS
+namespace Sandbox
 {
     class Application
     {

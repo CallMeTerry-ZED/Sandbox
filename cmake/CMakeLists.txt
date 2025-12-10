@@ -4,7 +4,7 @@
 
 cmake_minimum_required(VERSION 3.10)
 
-project(FPS VERSION 0.1.0 LANGUAGES CXX)
+project(Sandbox VERSION 0.1.0 LANGUAGES CXX)
 
 # Set C++ standard
 set(CMAKE_CXX_STANDARD 17)
@@ -154,12 +154,12 @@ endif()
 # ===========================
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
     target_compile_definitions(${PROJECT_NAME} PRIVATE
-        FPS_DEBUG
+        SANDBOX_DEBUG
     )
 endif()
 
 message(STATUS "")
-message(STATUS "========== FPS Engine Build Summary ==========")
+message(STATUS "========== Sandbox Engine Build Summary ==========")
 message(STATUS "C++ Standard:        ${CMAKE_CXX_STANDARD}")
 message(STATUS "Build Type:          ${CMAKE_BUILD_TYPE}")
 message(STATUS "Install Prefix:      ${CMAKE_INSTALL_PREFIX}")

@@ -12,7 +12,7 @@
 #include <functional>
 #include <memory>
 
-namespace FPS
+namespace Sandbox
 {
     struct WindowProps
     {
@@ -20,7 +20,7 @@ namespace FPS
         unsigned int Width;
         unsigned int Height;
 
-        WindowProps(const std::string& title = "FPS Engine",
+        WindowProps(const std::string& title = "Sandbox Engine",
                     unsigned int width = 1280,
                     unsigned int height = 720)
         : Title(title), Width(width), Height(height)

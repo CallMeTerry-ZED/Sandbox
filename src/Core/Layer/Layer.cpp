@@ -6,7 +6,7 @@
 
 #include "Core/Layer/Layer.h"
 
-namespace FPS
+namespace Sandbox
 {
     Layer::Layer(const std::string& name)
     : m_DebugName(name)

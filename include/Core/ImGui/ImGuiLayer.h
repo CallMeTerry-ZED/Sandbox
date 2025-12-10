@@ -7,7 +7,7 @@
 
 #include "Core/Layer/Layer.h"
 
-namespace FPS
+namespace Sandbox
 {
     class ImGuiLayer : public Layer
     {

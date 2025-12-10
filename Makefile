@@ -21,8 +21,8 @@ build: config
 	@cd $(BUILD_DIR) && cmake --build . --config $(BUILD_TYPE)
 
 run: build
-	@echo "Running FPS..."
-	@./$(BUILD_DIR)/bin/FPS
+	@echo "Running Sandbox..."
+	@./$(BUILD_DIR)/bin/Sandbox
 
 debug-build:
 	@echo "Configuring and building Debug..."
@@ -31,8 +31,8 @@ debug-build:
 	@cd $(BUILD_DIR) && cmake --build . --config Debug
 
 debug-run: debug-build
-	@echo "Running FPS (Debug)..."
-	@./$(BUILD_DIR)/bin/FPS
+	@echo "Running Sandbox (Debug)..."
+	@./$(BUILD_DIR)/bin/Sandbox
 
 clean:
 	@echo "Cleaning build directory..."
