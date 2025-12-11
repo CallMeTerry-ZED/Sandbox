@@ -34,6 +34,8 @@ namespace Sandbox
             this->QueueEvent(std::move(e));
         });
 
+        Renderer::Init();
+
         m_ImGuiLayer = new ImGuiLayer();
         PushOverlay(m_ImGuiLayer);
 

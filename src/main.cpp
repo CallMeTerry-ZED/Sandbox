@@ -162,6 +162,7 @@ public:
 		m_TextureShader.reset(Sandbox::Shader::Create(textureShaderVertexSrc, textureShaderFragmentSrc));
 
 		m_Texture = Sandbox::Texture2D::Create("assets/textures/Checkerboard.png");
+		m_TestTexture = Sandbox::Texture2D::Create("assets/textures/HaHaHA.png");
 
 		std::dynamic_pointer_cast<Sandbox::OpenGLShader>(m_TextureShader)->Bind();
 		std::dynamic_pointer_cast<Sandbox::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
@@ -211,6 +212,8 @@ public:
 
 		m_Texture->Bind();
 		Sandbox::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+		m_TestTexture->Bind();
+		Sandbox::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 
 		Sandbox::Renderer::EndScene();
     }
@@ -237,7 +240,7 @@ private:
 
 	Sandbox::Ref<Sandbox::Shader> m_FlatColorShader, m_TextureShader;
 	Sandbox::Ref<Sandbox::VertexArray> m_SquareVA;
-    Sandbox::Ref<Sandbox::Texture2D> m_Texture;
+    Sandbox::Ref<Sandbox::Texture2D> m_Texture, m_TestTexture;
 
 	Sandbox::OrthographicCamera m_Camera;
 	glm::vec3 m_CameraPosition;

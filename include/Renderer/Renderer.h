@@ -14,6 +14,7 @@ namespace Sandbox
 	class Renderer
 	{
 	public:
+		static void Init();
 		static void BeginScene();
 		static void BeginScene(OrthographicCamera& camera);
 		static void EndScene();
